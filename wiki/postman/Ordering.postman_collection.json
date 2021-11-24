@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "7118badf-01b0-4b95-9839-1652770340e5",
+		"name": "Ordering",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Driver Types",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/driver-types",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"driver-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"scooters\",\n    \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/driver-types",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"driver-types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delivery Areas",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/driver-areas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"driver-areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"City center\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/driver-areas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"driver-areas"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Drivers",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/drivers?vehicleType=619e285313e82785e34467d6&deliveryAreas=619e282e13e82785e34467cb&status=inactive",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"drivers"
+							],
+							"query": [
+								{
+									"key": "vehicleType",
+									"value": "619e285313e82785e34467d6"
+								},
+								{
+									"key": "deliveryAreas",
+									"value": "619e282e13e82785e34467cb"
+								},
+								{
+									"key": "status",
+									"value": "inactive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vehicleColor\": \"red\",\n    \"vehicleType\": \"619e4d661c65a8cb47c7d0c4\",\n    \"email\": \"test@gmail.com\",\n    \"phone\": \"994775643322\",\n    \"deliveryAreas\": [\n        {\n            \"_id\": \"619e282e13e82785e34467cb\"\n        }\n    ],\n    \"name\": {\n        \"first\": \"test\",\n        \"last\": \"test\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/drivers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"drivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/drivers/status/619e3413cd080076ba445f7b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"drivers",
+								"status",
+								"619e3413cd080076ba445f7b"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  ordering-api:
+    container_name: ordering-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "9001:9001"
+    depends_on:
+      - mongodb
+    restart: always
+  mongodb:
+    container_name: ordering-mongodb
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE= Ordering
+    ports:
+      - "27017:27017"
